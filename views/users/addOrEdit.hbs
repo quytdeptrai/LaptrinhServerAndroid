@@ -1,0 +1,296 @@
+<html lang="en">
+
+  <head>
+    <title>Đăng Kí Thành Viên</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link href="https://localbrand.vn/wp-content/uploads/2021/07/FM-STYLE-4-220x220.jpg" rel="icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <nav class="navbar navbar-expand-lg" style=" font-size: 16px;">
+        <div class="collapse navbar-collapse row" id="navbarNavDropdown">
+          <div class="col-sm-5 shopping-mall">
+            <nav>
+              <a class="navbar-brand" href="#"  style="display: flex;  align-items: center;  margin-right: 10px;">
+                <img
+                  src="https://media-fmplus.cdn.vccloud.vn/uploads/gui/4795312b-8e83-4876-b497-340f9c755df0.png"
+                  alt=""
+                  width="180"
+                  height="36"
+                
+                />
+                <h2 style="margin: 10px;"> FM STYLE</h2>
+              </a>
+            </nav>
+            </div>
+       <ul class="navbar-nav col-sm-7">
+  <li class="nav-item active">
+    <a class="nav-link font-weight-bold text-uppercase" href="/user/home">
+      Trang chủ
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link font-weight-bold text-uppercase ml-3" href="/user/product">
+      Sản phẩm
+    </a>
+  </li>
+  <li class="nav-item dropdown">
+    <a
+      class="nav-link dropdown-toggle font-weight-bold text-uppercase ml-3"
+      href="#"
+      id="navbarDropdownMenuLink"
+      data-toggle="dropdown"
+      aria-haspopup="true"
+      aria-expanded="false"
+    >
+      Tài khoản
+    </a>
+    <div
+      class="dropdown-menu"
+      aria-labelledby="navbarDropdownMenuLink"
+      style="border-radius: 15px;"
+    >
+      <a class="dropdown-item font-weight-bold" href="/user">Đăng kí thành viên</a>
+      <a class="dropdown-item font-weight-bold" href="/user/list">Kiểm tra thành viên</a>
+      <div class="dropdown-divider"></div>
+      <a class="dropdown-item font-weight-bold" href="/main">Đăng xuất</a>
+    </div>
+  </li>
+</ul>
+
+        </div>
+
+
+        <div>
+          <form
+            class="form-inline"
+            style="border-radius: 15px; border: 1px solid;"
+          >
+            <input
+              style="font-size:16px; border-radius: 15px;"
+              class="form-control mr-sm-2"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <button
+              style="font-size:16px; border-radius: 15px;"
+              class="btn my-2 my-sm-0"
+              type="submit"
+            >Search</button>
+          </form>
+        </div>
+      </nav>
+
+      <article>
+
+     <h3 style="display: flex; justify-content: space-between; align-items: center;">
+  <a href="/user/list" class="btn btn-primary">XEM DANH SÁCH THÀNH VIÊN</a>
+  <span style="margin-left: auto;">{{viewTitle}}</span>
+</h3>
+        <form
+          action="/user/add"
+          method="POST"
+          autocomplete="off"
+          style="border-radius: 10px; border: 3px solid; padding: 15px;"
+        >
+          <input type="hidden" name="id" value="{{user._id}}" />
+          <div class="form-group">
+            <label for="">Username</label>
+            <input
+              style="border-radius: 15px;"
+              type="text"
+              name="username"
+              value="{{user.username}}"
+              class="form-control"
+              placeholder="Nhập tên đăng nhập"
+             required=""             
+            />
+          </div>
+          <div class="form-group">
+            <label for="">Password</label>
+            <input
+              style="border-radius: 15px;"
+              type="text"
+              name="password"
+              value="{{user.password}}"
+              class="form-control"
+              placeholder="Nhập mật khẩu"
+                  required=""
+            />
+          </div>
+          <div class="form-group">
+            <label for="">Fullname</label>
+            <input
+              style="border-radius: 15px;"
+              type="text"
+              name="fullName"
+              value="{{user.fullName}}"
+              class="form-control"
+              required=""
+              placeholder="Nhập họ và tên"
+            />
+          </div>
+          <div class="form-group">
+            <label for="">Email</label>
+            <input
+              style="border-radius: 15px;"
+              type="text"
+              name="email"
+              value="{{user.email}}"
+              class="form-control"
+              placeholder="Nhập địa chỉ email"
+              required=""
+            />
+          </div>
+          <div class="form-row">
+            <div class="form-group col-sm-6">
+              <label for="">Phone</label>
+              <input
+                style="border-radius: 15px;"
+                type="text"
+                name="phone"
+                value="{{user.phone}}"
+                class="form-control"
+                placeholder="Nhập số điện thoại"
+                required=""
+              />
+            </div>
+            <div class="form-group col-sm-6">
+              <label for="">Address</label>
+              <input
+                style="border-radius: 15px;"
+                type="text"
+                name="address"
+                value="{{user.address}}"
+                class="form-control"
+                placeholder="Nhập địa chỉ"
+                required=""
+              />
+            </div>
+            <div class="form-group">
+              <button
+                style="border-radius: 15px; background-color: black; color: white;"
+                type="submit"
+                class="btn-btn-info"
+              >Submit</button>
+              <button
+                style="border-radius: 15px; background-color: black; color: white;"
+                type="reset"
+                class="btn-btn-info"
+              >Cancel</button>
+            </div>
+          </div>
+        </form>
+
+      </article>
+
+      <footer class="py-5" style="background-color: #F5F5F5;">
+        <div
+          class="container"
+          style="border-radius: 20px; background-color: FEFF86;"
+        >
+          <div class="row">
+            <div class="col-md-4">
+              <h4 class="mb-4">GIỚI THIỆU VỀ FM STYLE</h4>
+              <p>FM là thương hiệu bán lẻ thời trang nổi tiếng được thành lập từ
+                năm 2012. Chuyên sản xuất và bán lẻ thời trang nam - nữ. Trụ sở
+                chính đặt tại Thành phố Đà Nẵng</p>
+            </div>
+
+            <div class="col-md-4">
+              <h4 class="mb-4">Theo dõi chúng tôi</h4>
+              <ul class="list-inline">
+                <ul class="list-inline">
+                  <li class="list-inline-item"><a
+                      href="https://www.facebook.com/fm.com.vn"
+                      class="btn btn-outline-dark"
+                      style="background-color: #3b5998; color: #fff; border-radius: 5px; padding: 5px 10px;"
+                    ><i class="fab fa-facebook-f"></i></a></li>
+                  <li class="list-inline-item"><a
+                      href="https://twitter.com/"
+                      class="btn btn-outline-dark"
+                      style="background-color: #1da1f2; color: #fff; border-radius: 5px; padding: 5px 10px;"
+                    ><i class="fab fa-twitter"></i></a></li>
+                  <li class="list-inline-item"><a
+                      href="https://www.youtube.com/watch?v=6vc29FcZ0KM"
+                      class="btn btn-outline-dark"
+                      style="background-color: #c4302b; color: #fff; border-radius: 5px; padding: 5px 10px;"
+                    ><i class="fab fa-instagram"></i></a></li>
+                  <li class="list-inline-item"><a
+                      href="https://www.linkedin.com/"
+                      class="btn btn-outline-dark"
+                      style="background-color: #0077b5; color: #fff; border-radius: 5px; padding: 5px 10px;"
+                    ><i class="fab fa-linkedin"></i></a></li>
+                  <li class="list-inline-item"><a
+                      href="https://www.pinterest.com/"
+                      class="btn btn-outline-dark"
+                      style="background-color: #bd081c; color: #fff; border-radius: 5px; padding: 5px 10px;"
+                    ><i class="fab fa-pinterest"></i></a></li>
+                  <li class="list-inline-item"><a
+                      href="https://www.tiktok.com/"
+                      class="btn btn-outline-dark"
+                      style="background-color: #69c9d0; color: #fff; border-radius: 5px; padding: 5px 10px;"
+                    ><i class="fab fa-tiktok"></i></a></li>
+                </ul>
+              </ul>
+            </div>
+
+            <div class="col-md-4">
+              <h4 class="mb-4">Liên hệ chúng tôi</h4>
+              <ul>
+                <li style="color: #333; font-size: 16px;"><i
+                    class="fas fa-map-marker-alt"
+                  ></i><a
+                    href="https://www.google.com/maps/place/48+Y%C3%AAn+B%C3%A1i,+H%E1%BA%A3i+Ch%C3%A2u+1,+Q.+H%E1%BA%A3i+Ch%C3%A2u,+%C4%90%C3%A0+N%E1%BA%B5ng+550000/@16.0690339,108.222553,17z/data=!3m1!4b1!4m6!3m5!1s0x31421833d1809da9:0x8dddf7211bc12b4!8m2!3d16.0690339!4d108.222553!16s%2Fg%2F11csc8b_w1"
+                    target="_blank"
+                  > 48 Yên Bái, Hải Châu 1, Hải Châu, Đà Nẵng </a></li>
+                <li style="color: #333; font-size: 16px;"><i
+                    class="fas fa-phone-alt"
+                  ></i><a href="#"> (555) 090.1800.888</a></li>
+                <li style="color: #333; font-size: 16px;"><i
+                    class="fas fa-envelope"
+                  ></i><a href="mailto:website@fmstyle.com.vn">
+                    website@fmstyle.com.vn</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+
+</html>
